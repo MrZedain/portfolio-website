@@ -78,9 +78,16 @@ export function Navbar() {
   }
 
   const textVariants = {
-    hiddenUp: { y: -19 },
-    hiddenDown: { y: 19 },
-    visible: { y: 0 },
+    hiddenUp: { y: -15, opacity: 0 },
+    hiddenDown: { y: 15, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: {
+        duration: 0.35,
+        ease: [0.4, 0.0, 0.2, 1], // Smooth easeInOut cubic
+      }
+    },
   }
 
   return (
@@ -132,31 +139,34 @@ export function Navbar() {
 
         {/* Small screen MENU/CLOSE toggle */}
         <div
-          className="md:hidden absolute right-4 top-4 h-6 w-16 cursor-pointer overflow-hidden text-right"
+          className="md:hidden flex justify-between items-center w-full cursor-pointer"
           onClick={toggleMenu}
         >
+          <h2 className="font-bold">ZAIN ALI</h2>
           <AnimatePresence mode="wait">
             {!isOpen ? (
               <motion.div
                 key="menu"
-                initial="hiddenUp"
-                animate="visible"
-                exit="hiddenUp"
-                variants={textVariants}
-                transition={{ duration: 0.25, ease: "easeInOut" }}
-                className="absolute right-0"
+                initial={{ y: -15, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -15, opacity: 0 }}
+                transition={{ 
+                  duration: 0.35,
+                  ease: [0.4, 0.0, 0.2, 1]
+                }}
               >
                 MENU
               </motion.div>
             ) : (
               <motion.div
                 key="close"
-                initial="hiddenDown"
-                animate="visible"
-                exit="hiddenDown"
-                variants={textVariants}
-                transition={{ duration: 0.25, ease: "easeInOut" }}
-                className="absolute right-0"
+                initial={{ y: 15, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 15, opacity: 0 }}
+                transition={{ 
+                  duration: 0.35,
+                  ease: [0.4, 0.0, 0.2, 1]
+                }}
               >
                 CLOSE
               </motion.div>

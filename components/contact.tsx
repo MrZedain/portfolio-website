@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export function Contact() {
   return (
-    <section id="contact" className="min-h-screen py-5 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto scroll-mt-24">
+    <section id="contact" className="min-h-3/4 py-5 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto scroll-mt-24">
       <div className="space-y-16">
         <div className="space-y-4">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
