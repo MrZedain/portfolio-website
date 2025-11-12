@@ -1,21 +1,30 @@
+
 "use client"
 
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
+import { animate, motion, MotionValue, useMotionValue, useScroll, useTransform } from "framer-motion"
+import useMeasure from "react-use-measure";
+import { useEffect, useRef, useState } from "react"
 import { BsGithub } from "react-icons/bs"
 
+// Cloudinary URLs helper
+const getCloudinaryImageUrl = (publicId: string) =>
+  `https://res.cloudinary.com/zain-portfolio/image/upload/f_auto,q_auto,w_1200/${publicId}`
+const getCloudinaryVideoUrl = (publicId: string) =>
+  `https://res.cloudinary.com/zain-portfolio/video/upload/f_auto,q_auto,vc_auto/${publicId}.mp4`
+const getBlurredThumbnail = (publicId: string) =>
+  `https://res.cloudinary.com/zain-portfolio/image/upload/w_300,q_10,e_blur:1000/${publicId}`
+
+
 const mediaItems = [
-  
-  "/images/photography/eminonu-street-2.JPG",
-  "/images/photography/birds-on-a-wire.JPG",
-  "/videos/vapur-abi.mp4",
-  "/videos/bus-galata.mp4",
-  "/images/photography/raindrops.JPG",
-  
-  
-  "/videos/pink-sky-birds.mp4",
-  "/videos/ferry.mp4",
-  "/images/photography/balat-sahil.JPG",
+  "/public/images/photography/eminonu-street-2",
+  "/public/videos/vapur-abi",
+  "/public/images/photography/birds-on-a-wire",
+  "/public/videos/bus-galata",
+  "/public/images/photography/raindrops",
+  "/public/videos/ferry",
+  "/public/images/photography/cami",
+  "/public/videos/pink-sky-birds",
+
 ]
 
 export function Hero() {
@@ -29,6 +38,27 @@ export function Hero() {
   const blur = useTransform(scrollYProgress, [0, 1], ["blur(0px)", "blur(12px)"])
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.3])
 
+
+
+  let [wRef, {width}] = useMeasure();
+    const xTranslation: MotionValue<number> = useMotionValue(0)
+   
+  useEffect(() => {
+    let controls;        
+    let finalPosition = -width / 2 - 5 
+
+    controls = animate(xTranslation, [0, finalPosition], {
+      ease: "linear", 
+      duration: 40, 
+      repeat: Infinity,
+      repeatType: "loop",
+      repeatDelay: 0,
+    })
+
+    return controls.stop
+  
+  }, [xTranslation, width])
+
   return (
     <motion.section
       ref={ref}
@@ -39,34 +69,47 @@ export function Hero() {
         opacity,
       }}
     >
-      {/* 🔹 Background collage */}
-      <div className="absolute inset-0 grid grid-cols-3 gap-2 md:gap-3 opacity-60">
-        {mediaItems.map((src, i) =>
-          src.endsWith(".mp4") ? (
-            <motion.video
-              key={i}
-              src={src}
-              className="w-full h-full object-cover rounded-lg"
-              autoPlay
-              muted
-              loop
-              playsInline
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: i * 0.1 }}
-            />
-          ) : (
-            <motion.img
-              key={i}
-              src={src}
-              className="w-full h-full object-cover rounded-lg"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: i * 0.1 }}
-            />
-          )
-        )}
+      {/* 🔹 Continuous Horizontal Loop */}
+      <div className="absolute inset-0 gap-3 overflow-hidden opacity-70">
+        <motion.div
+          className="flex h-full w-max"
+          ref={wRef}
+          style={{x: xTranslation}}
+        >
+          {[...Array(2)].map((_, copyIndex) => (
+            <div
+              key={copyIndex}
+              // ref={copyIndex === 0 ? sequenceRef : undefined}
+              className="flex shrink-0"
+            >
+              {mediaItems.map((src, i) =>
+                src.includes("videos/") ? (
+                  <video
+                    key={`${copyIndex}-${i}`}
+                    src={getCloudinaryVideoUrl(src)}
+                    className="h-screen w-auto object-cover rounded-lg mx-1.5"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                ) : (
+                  <img
+                    key={`${copyIndex}-${i}`}
+                    src={getCloudinaryImageUrl(src)}
+                    className="h-screen w-auto object-cover rounded-lg mx-1.5"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )
+              )}
+            </div>
+          ))}
+        </motion.div>
+
+
       </div>
+
 
       {/* 🔹 Overlay gradient for readability */}
       <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent" />
