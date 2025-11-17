@@ -99,9 +99,9 @@ export function DevWork() {
   return (
     <section
       id="development"
-      className="min-h-screen py-10 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto scroll-mt-24"
+      className="min-h-screen pt-10 px-4 md:px-12 lg:px-24 max-w-7xl mx-auto scroll-mt-24"
     >
-      <div className="space-y-16">
+      <div className="space-y-4">
         <header className="space-y-4">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
             DEVELOPMENT WORK
@@ -118,7 +118,7 @@ export function DevWork() {
             return (
               <Card
                 key={index}
-                className="bg-card border-border my-2 p-6 md:p-8 hover:border-white/20 transition-colors group"
+                className="bg-black border-black my-2 md:p-8 hover:border-white/20 transition-colors group"
               >
                 {/* 🖼 Image Carousel */}
                 <div
@@ -183,7 +183,7 @@ export function DevWork() {
                     {project.tech.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="text-xs px-3 py-1 bg-secondary text-secondary-foreground rounded-full"
+                        className="text-xs px-3 py-1 bg-white text-black rounded-full"
                       >
                         {tech}
                       </span>

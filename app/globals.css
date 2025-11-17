@@ -3,6 +3,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
+/* Plain blinking cursor */
+.blink {
+  display: inline-block;
+  width: 1ch; /* same width as a character */
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
 :root {
   --background: oklch(0 0 0);
   --foreground: oklch(1 0 0);

@@ -3,6 +3,7 @@ import { DevWork } from "@/components/dev-work"
 import { Creatives } from "@/components/creatives"
 import { Contact } from "@/components/contact"
 import { Navbar } from "@/components/navbar"
+import { Hobbies } from "@/components/hobbies"
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <div className="relative z-10 bg-black">
         <DevWork />
         <Creatives />
+        <Hobbies />
         <Contact />
       </div>
     </main>
