@@ -67,7 +67,7 @@ export function Navbar() {
 
     if (isOpen) {
       // Close the mobile menu first so layout stabilizes, then scroll after
-      // the menu exit animation (~250ms). We wait slightly longer to be safe.
+      // the menu exit animation (~250ms).
       setIsOpen(false)
       const waitMs = 300
       setTimeout(doScroll, waitMs)

@@ -15,7 +15,7 @@ const getCloudinaryVideoUrl = (publicId: string) =>
 const getBlurredThumbnail = (publicId: string) =>
   `https://res.cloudinary.com/zain-portfolio/image/upload/w_300,q_10,e_blur:1000/${publicId}`
 
-// Data with Cloudinary public IDs (omit extensions)
+// Data with Cloudinary public IDs
 const creativeWorks = [
   {
     title: "Photography",
@@ -301,25 +301,6 @@ export function Creatives() {
             </motion.div>
           )}
         </AnimatePresence>
-
-        {/* <div className="pt-12">
-          <h3 className="text-2xl md:text-3xl font-semibold mb-8">
-            Hobbies & Interests
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {hobbies.map((hobby, index) => (
-              <div
-                key={index}
-                className="space-y-2 p-6 border border-black hover:border-white/20 transition-colors"
-              >
-                <h4 className="text-lg font-semibold text-white">{hobby.title}</h4>
-                <p className="text-muted-foreground leading-relaxed">{hobby.description}</p>
-              </div>
-            ))}
-          </div>
-        </div> */}
-
-
       </div>
     </section>
   )

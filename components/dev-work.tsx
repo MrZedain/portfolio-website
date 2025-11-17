@@ -7,11 +7,11 @@ import { ExternalLink, Github } from "lucide-react"
 import Link from "next/link"
 import { useSwipeable } from "react-swipeable"
 
-// 🧠 Cloudinary URL helper
+// Cloudinary URL helper
 const getCloudinaryImageUrl = (publicId: string, w = 1200) =>
   `https://res.cloudinary.com/zain-portfolio/image/upload/f_auto,q_auto:eco,dpr_auto,w_${w}/${publicId}`
 
-// 🧩 Project data
+// Project data
 const projects = [
   {
     title: "Diana Page's Art Portfolio",
@@ -72,7 +72,7 @@ const projects = [
 export function DevWork() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  // 🕒 Auto-cycle carousel every 3s
+  //Auto-cycle carousel every 3s
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % 3)
@@ -86,7 +86,7 @@ export function DevWork() {
     trackMouse: true,
   })
 
-  // 🧠 Memoize Cloudinary URLs to avoid recalculation on re-render
+  // Memoize Cloudinary URLs to avoid recalculation on re-render
   const projectData = useMemo(
     () =>
       projects.map((project) => ({

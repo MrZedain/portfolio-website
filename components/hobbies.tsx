@@ -5,13 +5,6 @@ import { Card } from "@/components/ui/card"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
-// Cloudinary helpers
-// const getCloudinaryImageUrl = (publicId: string) =>
-//     `https://res.cloudinary.com/zain-portfolio/image/upload/f_auto,q_auto,w_1200/${publicId}`
-
-// const getCloudinaryVideoUrl = (publicId: string) =>
-//     `https://res.cloudinary.com/zain-portfolio/video/upload/f_auto,q_auto,vc_auto/${publicId}.mp4`
-
 // Hobby data declared inside the file
 const hobbies = [
     {
