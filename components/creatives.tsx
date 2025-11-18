@@ -7,13 +7,13 @@ import { motion, AnimatePresence } from "framer-motion"
 
 // Cloudinary URLs helper
 const getCloudinaryImageUrl = (publicId: string) =>
-  `https://res.cloudinary.com/zain-portfolio/image/upload/f_auto,q_auto,w_1200/${publicId}`
+  `https://res.cloudinary.com/portfolio2/image/upload/f_auto,q_auto,w_1200/${publicId}`
 
 const getCloudinaryVideoUrl = (publicId: string) =>
-  `https://res.cloudinary.com/zain-portfolio/video/upload/f_auto,q_auto,vc_auto/${publicId}.mp4`
+  `https://res.cloudinary.com/portfolio2/video/upload/f_auto,q_auto,vc_auto/${publicId}.mp4`
 
 const getBlurredThumbnail = (publicId: string) =>
-  `https://res.cloudinary.com/zain-portfolio/image/upload/w_300,q_10,e_blur:1000/${publicId}`
+  `https://res.cloudinary.com/portfolio2/image/upload/w_300,q_10,e_blur:1000/${publicId}`
 
 // Data with Cloudinary public IDs
 const creativeWorks = [
@@ -22,25 +22,25 @@ const creativeWorks = [
     description: "Shots taken throughout Istanbul.",
     icon: Camera,
     images: [
-      "public/images/photography/eminonu-street",
-      "public/images/photography/birds-on-a-wire",
-      "public/images/photography/home",
-      "public/images/photography/eminonu-street-2",
-      "public/images/photography/tower",
-      "public/images/photography/clouds",
-      "public/images/photography/leaves",
-      "public/images/photography/light",
-      "public/images/photography/raindrops",
-      "public/images/photography/aksaray-street",
-      "public/images/photography/cami",
-      "public/images/photography/levazim",
-      "public/images/photography/sariyer-street",
-      "public/images/photography/uskudar",
-      "public/images/photography/eminonu-pasaj",
-      "public/images/photography/camlica",
-      "public/images/photography/clouds-bosphorus",
-      "public/images/photography/birds",
-      "public/images/photography/balat-sahil",
+      "eminonu-street",
+      "birds-on-a-wire",
+      "home",
+      "eminonu-street-2",
+      "tower",
+      "clouds",
+      "leaves",
+      "light",
+      "raindrops",
+      "aksaray-street",
+      "cami",
+      "levazim",
+      "sariyer-street",
+      "uskudar",
+      "eminonu-pasaj",
+      "camlica",
+      "clouds-bosphorus",
+      "birds",
+      "balat-sahil",
     ],
   },
   {
@@ -48,16 +48,16 @@ const creativeWorks = [
     description: "Capturing cinematic moments throughout Istanbul, Karachi and Dubai",
     icon: Video,
     videos: [
-      "public/videos/bridge-bosphorus",
-      "public/videos/bus-galata",
-      "public/videos/ferry",
-      "public/videos/camels-sunset",
-      "public/videos/pink-sky-birds",
-      "public/videos/rain-street",
-      "public/videos/camels-side",
-      "public/videos/street-through-tree",
-      "public/videos/vapur-abi",
-      "public/videos/palm-tree"
+      "bridge-bosphorus",
+      "bus-galata",
+      "ferry",
+      "camels-sunset",
+      "pink-sky-birds",
+      "rain-street",
+      "camels-side",
+      "street-through-tree",
+      "vapur-abi",
+      "palm-tree"
     ],
   },
   {
@@ -65,19 +65,19 @@ const creativeWorks = [
     description: "From pixel art to hand drawn sketches",
     icon: Palette,
     images: [
-      "public/images/art/coffee-shop",
-      "public/images/art/father-gascoigne",
-      "public/images/art/city",
-      "public/images/art/knight",
-      "public/images/art/desert",
-      "public/images/art/kurucesme",
-      "public/images/art/Totem_pole",
-      "public/images/art/man",
-      "public/images/art/train",
-      "public/images/art/lady-maria",
-      "public/images/art/alien",
-      "public/images/art/doodle",
-      "public/images/art/tem",
+      "coffee-shop",
+      "father-gascoigne",
+      "city",
+      "knight",
+      "desert",
+      "kurucesme",
+      "Totem_pole",
+      "man",
+      "train",
+      "lady-maria",
+      "alien",
+      "doodle",
+      "tem",
     ],
   },
 ]

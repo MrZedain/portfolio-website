@@ -9,7 +9,7 @@ import { useSwipeable } from "react-swipeable"
 
 // Cloudinary URL helper
 const getCloudinaryImageUrl = (publicId: string, w = 1200) =>
-  `https://res.cloudinary.com/zain-portfolio/image/upload/f_auto,q_auto:eco,dpr_auto,w_${w}/${publicId}`
+  `https://res.cloudinary.com/portfolio2/image/upload/f_auto,q_auto:eco,dpr_auto,w_${w}/${publicId}`
 
 // Project data
 const projects = [
@@ -35,9 +35,9 @@ const projects = [
     github: "https://github.com/MrZedain/DianaPageSite-public",
     live: "https://dianapage.co.za/",
     images: [
-      "/public/images/artist-1.jpg",
-      "/public/images/artist-2.jpg",
-      "/public/images/artist-3.jpg",
+      "artist-1.jpg",
+      "artist-2.jpg",
+      "artist-3.jpg",
     ],
   },
   {
@@ -62,9 +62,9 @@ const projects = [
     github: "https://github.com/MrZedain/istanbulandi-site",
     live: "https://www.istanbulandi.org.tr/",
     images: [
-      "/public/images/ngo-1.jpg",
-      "/public/images/ngo-2.jpg",
-      "/public/images/ngo-3.jpg",
+      "ngo-1.jpg",
+      "ngo-2.jpg",
+      "ngo-3.jpg",
     ],
   },
 ]

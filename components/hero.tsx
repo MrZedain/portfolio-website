@@ -14,21 +14,21 @@ import { TypewriterText } from "./typwriter-text"
 
 // Cloudinary helpers
 const getCloudinaryImageUrl = (publicId: string) =>
-  `https://res.cloudinary.com/zain-portfolio/image/upload/f_auto,q_auto,w_1200/${publicId}`
+  `https://res.cloudinary.com/portfolio2/image/upload/f_auto,q_auto,w_1200/${publicId}`
 
 const getCloudinaryVideoUrl = (publicId: string) =>
-  `https://res.cloudinary.com/zain-portfolio/video/upload/f_auto,q_auto,vc_auto/${publicId}.mp4`
+  `https://res.cloudinary.com/portfolio2/video/upload/f_auto,q_auto,vc_auto/${publicId}`
 
 // Media list
 const mediaItems = [
-  "/public/images/photography/eminonu-street-2",
-  "/public/videos/vapur-abi",
-  "/public/images/photography/birds-on-a-wire",
-  "/public/videos/bus-galata",
-  "/public/images/photography/raindrops",
-  "public/videos/camels-sunset",
-  "/public/images/photography/cami",
-  "/public/videos/ferry",
+  "eminonu-street-2",
+  "vapur-abi.mp4",
+  "birds-on-a-wire",
+  "bus-galata.mp4",
+  "raindrops",
+  "camels-sunset.mp4",
+  "cami",
+  "ferry.mp4",
 ]
 
 export function Hero() {
@@ -66,7 +66,7 @@ export function Hero() {
 
   // Renders video or image depending on the path
   const renderMedia = (src: string, key: string) => {
-    const isVideo = src.includes("/videos/")
+    const isVideo = src.includes(".mp4")
 
     return isVideo ? (
       <video
