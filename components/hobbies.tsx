@@ -25,7 +25,7 @@ const hobbies = [
     images: [
       "https://res.cloudinary.com/portfolio2/image/upload/f_auto/q_auto/sea",
       "https://res.cloudinary.com/portfolio2/image/upload/f_auto/q_auto/cleaning",
-      "https://res.cloudinary.com/portfolio2/image/upload/f_auto/q_auto/v1/public/walking",
+      "https://res.cloudinary.com/portfolio2/image/upload/f_auto/q_auto//walking",
       "https://res.cloudinary.com/portfolio2/image/upload/f_auto/q_auto/stable",
       "https://res.cloudinary.com/portfolio2/image/upload/f_auto/q_auto/forest",
       "https://res.cloudinary.com/portfolio2/image/upload/f_auto/q_auto/forest2",
