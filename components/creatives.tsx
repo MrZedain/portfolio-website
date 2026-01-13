@@ -44,7 +44,7 @@ const creativeWorks = [
     ],
   },
   {
-    title: "Short Films",
+    title: "Videography",
     description: "Capturing cinematic moments throughout Istanbul, Karachi and Dubai",
     icon: Video,
     videos: [
