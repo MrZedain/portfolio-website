@@ -18,7 +18,7 @@ const projects = [
     status: "LIVE",
     description: (
       <>
-        React-based frontend project showcasing{" "}
+        NextJs-based project showcasing{" "}
         <a
           href="https://dianapage.co.za/"
           target="_blank"
@@ -28,10 +28,10 @@ const projects = [
           Diana Page's
         </a>{" "}
         portfolio of paintings, drawings and creative works. It demonstrates responsive design,
-        component-based architecture, and modern React practices.
+        component-based architecture, and modern NextJs practices.
       </>
     ),
-    tech: ["React", "JavaScript", "CSS"],
+    tech: ["NextJs", "Typescript", "TailwindCSS"],
     github: "https://github.com/MrZedain/DianaPageSite-public",
     live: "https://dianapage.co.za/",
     images: [
