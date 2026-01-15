@@ -2,6 +2,7 @@
 
 A personal portfolio showcasing development projects, photography, videography, and creative hobbies.
 Built with a strong emphasis on performance, design quality, and smooth user experience.
+can be viewed [here](https://portfolio-website-bay-pi.vercel.app/)
 
 ## Overview
 
