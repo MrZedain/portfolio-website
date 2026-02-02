@@ -1,4 +1,4 @@
-# Pesonal Portfolio Website
+# Personal Portfolio Website
 
 A personal portfolio showcasing development projects, photography, videography, and creative hobbies.
 Built with a strong emphasis on performance, design quality, and smooth user experience.
