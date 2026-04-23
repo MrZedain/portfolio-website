@@ -14,11 +14,35 @@ const getCloudinaryImageUrl = (publicId: string, w = 1200) =>
 // Project data
 const projects = [
   {
+    title: "eSIMTIME - Fullstack Developer",
+    status: "LIVE",
+    description: (
+      <>
+        Fullstack developer for gloabl eSIM provider {" "}
+        <a
+          href="https://esimtime.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-gray-300 underline underline-offset-4"
+        >
+          eSIMTIME
+        </a>{" "}
+        , building and maintainging cutomer/admin facing interfaces with Next.Js as well as API design & performance optimisation on the NestJs backend. 
+      </>
+    ),
+    tech: ["NextJs", "Typescript", "TailwindCSS", "NestJs", "PostgresSQL"],
+    live: "https://esimtime.com",
+    images: [
+      "esimtime-team.jpg",
+      "f1a17ec5-7163-4edd-8393-15de3e3f75fe.png",
+    ],
+  },
+  {
     title: "Diana Page's Art Portfolio",
     status: "LIVE",
     description: (
       <>
-        NextJs-based project showcasing{" "}
+        Global{" "}
         <a
           href="https://dianapage.co.za/"
           target="_blank"
@@ -76,7 +100,7 @@ export function DevWork() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % 3)
-    }, 3000)
+    }, 7000)
     return () => clearInterval(interval)
   }, [])
 
@@ -107,7 +131,7 @@ export function DevWork() {
             DEVELOPMENT WORK
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            Frontend projects showcasing responsive design and best practices
+            Frontend Projects and Work Experience
           </p>
         </header>
 
@@ -149,24 +173,24 @@ export function DevWork() {
                         {project.title}
                       </h3>
                       <span
-                        className={`text-xs w-fit px-2 py-0.5 rounded-full border ${
-                          project.status === "LIVE"
-                            ? "bg-green-500/20 text-green-400 border-green-400/30"
-                            : "bg-yellow-500/20 text-yellow-400 border-yellow-400/30"
-                        }`}
+                        className={`text-xs w-fit px-2 py-0.5 rounded-full border ${project.status === "LIVE"
+                          ? "bg-green-500/20 text-green-400 border-green-400/30"
+                          : "bg-yellow-500/20 text-yellow-400 border-yellow-400/30"
+                          }`}
                       >
                         {project.status}
                       </span>
                     </div>
-
                     <div className="flex gap-3">
-                      <Link
-                        href={project.github}
-                        className="text-muted-foreground hover:text-white transition-colors"
-                        aria-label="View on GitHub"
-                      >
-                        <Github className="w-5 h-5" />
-                      </Link>
+                      {project.github && (
+                        <Link
+                          href={project.github}
+                          className="text-muted-foreground hover:text-white transition-colors"
+                          aria-label="View on GitHub"
+                        >
+                          <Github className="w-5 h-5" />
+                        </Link>
+                      )}
                       <Link
                         href={project.live}
                         className="text-muted-foreground hover:text-white transition-colors"
